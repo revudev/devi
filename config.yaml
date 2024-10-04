@@ -1,0 +1,55 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: incibe-r01-svsm-app-dev
+  description: SVSM DEV
+  annotations:
+    backstage.io/techdocs-ref: 'url:https://github.com/DDC-NEORIS/incibe-r01-management/tree/main/svsm/plugins'
+    # backstage.io/techdocs-ref: dir:.
+    sonarqube.org/project-key: incibe-svsm_svsm
+    bitbucket.org/repository-slug: 'svsm/incibe-r01-svsm-app'
+    prometheus.io/rule: |
+      sum by (le) (rate(http_server_duration_bucket{service="svsm"}[5m]))
+    prometheus.io/alert: Watchdog, AlertmanagerClusterCrashlooping
+    dev.azure.com/project-repo: 'incibe-r01-svsm-app/incibe-r01-svsm-app'
+    github.com/project-slug: 'DDC-NEORIS/incibe-r01-svsm-app'
+    circleci.com/project-slug: bitbucket/svsm/incibe-r01-svsm-app
+    grafana/overview-dashboard: 'https://grafana.apps.okd-r01.dev.svsm.neoris.cloud/d/efa86fd1d0c121a26444b636a3f509a8/kubernetes-compute-resources-cluster?orgId=1&refresh=10s'
+    jenkins.io/job-full-name: 'svsm-build'
+    gitlab.com/project-slug: anpeni/incibe-r01-svsm-app
+    tektonci/build-namespace: 'svsm'
+    oracle/table: employee
+    sql-server/procedure: GetTableData
+    jira/project-key: SVSM
+    jira/label: svsm
+    mongodb/table: empleados
+    mongodb/procedure: GetTableData
+    backstage.io/kubernetes-id: incibe-r01-svsm-app
+    backstage.io/kubernetes-namespace: 'svsm'
+    drupal/option: api/v1/productos
+    liferay/option: content
+    loki/option: api/v1/loki
+    janus-idp.io/tekton: incibe-r01-svsm-app
+    owasp/option: incibe-r01-svsm-app
+    trivy/option: report
+    datadoghq.com/site: datadoghq.com
+    datadoghq.com/dashboard-url: https://p.datadoghq.com/sb/bc0c656e-5960-11ee-a8ef-da7ad0900002-edccc79a8d1020371389da58920f8efe
+    datadoghq.com/graph-token: 6f4cebdd51544733f59bc51a3528cd54726c3e0e110375afc5e6ee20aae89ee8
+  tags:
+    - react
+    - nodejs
+  links:
+    - url: https://github.com/DDC-NEORIS/incibe-r01-svsm-app
+      title: GitHub Repo
+      icon: Github
+    - url: https://github.com/DDC-NEORIS/incibe-r01-svsm-app-tests
+      title: GitHub Testing X
+      icon: Github
+    - url: https://app.svsm.neoris.cloud
+      title: Url website
+      icon: Github
+spec:
+  type: demo
+  lifecycle: development
+  system: testops
+  owner: incibe-r01
