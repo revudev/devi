@@ -10,7 +10,7 @@ metadata:
     bitbucket.org/repository-slug: 'svsm/incibe-r01-svsm-app'
     prometheus.io/rule: |
       sort_desc(sum(sum_over_time(ALERTS{alertstate="firing"}[24h])) by (alertname))
-    prometheus.io/alert: Watchdog, AlertmanagerClusterCrashlooping
+    prometheus.io/alert: Watchdog
     dev.azure.com/project-repo: 'incibe-r01-svsm-app/incibe-r01-svsm-app'
     github.com/project-slug: 'DDC-NEORIS/incibe-r01-svsm-app'
     circleci.com/project-slug: bitbucket/svsm/incibe-r01-svsm-app
